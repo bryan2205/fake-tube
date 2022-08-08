@@ -18,8 +18,6 @@ export class AppComponent {
   }
 
   changeMyTitle(event: string) {
-    console.log(event);
-
     this.title = event;
   }
 }
