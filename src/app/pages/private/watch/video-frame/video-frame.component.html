@@ -1,0 +1,7 @@
+<div class="card">
+  <iframe *ngIf="safeUrl" [src]="safeUrl"></iframe>
+  <div class="card-body">
+    <h5 class="card-title">{{ currentVideo.channelTitle }}</h5>
+    <p class="card-text">{{ currentVideo.description | truncate }}</p>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<span [hidden]="hidden">
+  <ng-container [ngSwitch]="true">
+    <small class="text-danger" *ngSwitchCase="errors?.required && touched">{{ typeElement }} è richiesto</small>
+    <small class="text-danger" *ngSwitchCase="errors?.pattern && touched">{{ typeElement }} non è valido</small>
+  </ng-container>
+</span>

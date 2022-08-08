@@ -1,0 +1,15 @@
+<div class="container d-flex flex-column h-100">
+  <div class="col-12 d-flex align-items-center">
+    <span role="button"> <i class="bi bi-arrow-left-circle-fill" [routerLink]="'../..'"></i></span>
+  </div>
+  <div class="row">
+    <div class="col-8 h-100 owerflow-auto">
+      <omnia-video-frame *ngIf="currentVideo" [currentVideo]="currentVideo"></omnia-video-frame>
+      <!-- <omnia-comp-video-item *ngIf="currentVideo" [video]="currentVideo"></omnia-comp-video-item> -->
+      <omnia-video-comments *ngIf="currentComments" [currentComments]="currentComments"></omnia-video-comments>
+    </div>
+    <div class="col-4 h-100 owerflow-auto">
+      <omnia-video-releated></omnia-video-releated>
+    </div>
+  </div>
+</div>

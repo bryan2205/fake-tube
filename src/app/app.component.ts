@@ -3,8 +3,23 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  // template: ``,
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'fake-tube';
+  public title: string = 'FakeTube';
+  isChanged: boolean = false;
+  milano: string = '../assets/images/milano.jpeg';
+  omnia: string = '../assets/images/omnia.png';
+
+  public changeTitle() {
+    this.isChanged = !this.isChanged;
+    this.title = this.isChanged ? 'OmniaTube' : 'FakeTube';
+  }
+
+  changeMyTitle(event: string) {
+    console.log(event);
+
+    this.title = event;
+  }
 }

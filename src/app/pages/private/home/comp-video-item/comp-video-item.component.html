@@ -1,0 +1,10 @@
+<div class="card">
+  <img class="card-img-top" [src]="video.imagePreview" alt="Card image cap" (click)="goToVideo(video.videoId)" />
+  <div class="px-3 pt-2 text-end">
+    <small>{{ video.publishedAt | date: 'yyyy-MMMM-dd' | uppercase }}</small>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ video.title | truncate: { end: 20, dots: true } }}</h5>
+    <p *ngIf="video.description" class="card-text">{{ video.description | truncate: { end: 50, dots: true } }}</p>
+  </div>
+</div>

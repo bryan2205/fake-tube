@@ -1,0 +1,77 @@
+<div>
+  <h1>STANDALONE</h1>
+  <form (ngSubmit)="sendStandaloneForm()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [formControl]="emailStandalone" />
+      <omnia-custom-error
+        [errors]="emailStandalone.errors"
+        [hidden]="emailStandalone.valid"
+        [typeElement]="'Email'"
+        [touched]="emailStandalone.touched"
+      ></omnia-custom-error>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Name</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div>
+  <h1>FORM GROUP</h1>
+  <form [formGroup]="myFormGroup" (ngSubmit)="sendMyFormGroup()">
+    <div class="mb-3">
+      <label for="" class="form-label">Email</label>
+      <input type="email" class="form-control" id="" aria-describedby="emailHelp" formControlName="email" />
+      <omnia-custom-error
+        [errors]="myFormGroup.controls['email'].errors"
+        [hidden]="myFormGroup.controls['email'].valid"
+        [typeElement]="'Email'"
+        [touched]="myFormGroup.controls['email'].touched"
+      ></omnia-custom-error>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Name</label>
+      <input type="text" class="form-control" id="" formControlName="name" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div>
+  <h1>FORM BUILDER</h1>
+  <form [formGroup]="myFormBuilder" (ngSubmit)="sendMyFormBuilder()">
+    <div class="mb-3">
+      <label for="" class="form-label">Email</label>
+      <input type="email" class="form-control" id="" aria-describedby="emailHelp" formControlName="email" />
+      <omnia-custom-error
+        [errors]="myFormBuilder.controls['email'].errors"
+        [hidden]="myFormBuilder.controls['email'].valid"
+        [typeElement]="'Email'"
+        [touched]="myFormBuilder.controls['email'].touched"
+      ></omnia-custom-error>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Name</label>
+      <input type="text" class="form-control" id="" formControlName="name" />
+    </div>
+    <div class="mb-3" formGroupName="address">
+      <label for="" class="form-label">Name</label>
+      <input type="text" class="form-control" id="" formControlName="street" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div>
+  <h1>FORM FROM JSON</h1>
+  <form *ngIf="formDinamico" [formGroup]="formDinamico">
+    <div class="mb-3" *ngFor="let item of FORMDINAMICO.controls">
+      <label for="" class="form-label">{{ item.label }}</label>
+      <input *ngIf="item.type !== 'select'" [type]="item.type" class="form-control" [name]="item.label" id="" [formControlName]="item.id" />
+      <select *ngIf="item.type == 'select'" class="form-select" aria-label="Default select example" [formControlName]="item.id">
+        <option *ngFor="let option of item.options">{{ option }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

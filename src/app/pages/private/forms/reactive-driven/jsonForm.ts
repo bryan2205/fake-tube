@@ -1,0 +1,46 @@
+export const FORM_DINAMICO = {
+  name: 'Nome',
+  controls: [
+    {
+      label: 'Username',
+      id: 'username_c',
+      type: 'text',
+      syncValidators: ['required'],
+      asyncValidators: ['pippo'],
+      defaultValue: 'pipp',
+    },
+    {
+      label: 'Email',
+      id: 'email_c',
+      type: 'text',
+      syncValidators: ['email', 'required'],
+      asyncValidators: [],
+      defaultValue: 'bryan.aguero@glue-labs.com',
+    },
+    {
+      label: 'Password',
+      id: 'pass_c',
+      type: 'text',
+      syncValidators: [],
+      asyncValidators: [],
+      defaultValue: '3474343433',
+    },
+    {
+      label: 'Ridigita Password',
+      id: 'pass_c',
+      type: 'text',
+      syncValidators: [],
+      asyncValidators: [],
+      defaultValue: '3474343433',
+    },
+    {
+      label: 'country',
+      id: 'country_c',
+      type: 'select',
+      syncValidators: [],
+      asyncValidators: [],
+      defaultValue: [],
+      options: ['italia', 'Peru'],
+    },
+  ],
+};

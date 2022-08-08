@@ -1,0 +1,21 @@
+<div class="mb-5">
+  <h1>FIGLIO</h1>
+  <div class="responsive-image">
+    <span>{{ titleChild }}</span>
+    <!-- <img [ngClass]="{ 'img-thumbnail': true }" [src]="isChanged ? milano : omnia" alt="..." /> -->
+  </div>
+  <button class="btn btn-primary" (click)="changeTitle()">cambia il titolo !</button>
+</div>
+
+<div class="row">
+  <div class="card col-sm-12 col-md-3 m-2" *ngFor="let item of basicArray; index as i">
+    <img class="card-img-top" [src]="isChanged ? milano : omnia" alt="Card image cap" />
+    <div class="card-body">
+      <!-- <pre>{{ item | json }}</pre> -->
+      <h5 class="card-title">{{ item.name }} like: {{ item.like }}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <!-- <omnia-like (likeCount)="item.like = $event"></omnia-like> -->
+      <omnia-like (likeCount)="pushLike($event, item.id)"></omnia-like>
+    </div>
+  </div>
+</div>
